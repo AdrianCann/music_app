@@ -2,11 +2,32 @@
 <html>
 <head>
   <title>MusicApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <% if flash[:errors] %>
+
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+
+  <% end %>
+
+  <br>
+
+<% if current_user.nil? %>
+  <%=link_to "Log In", new_session_url %>
+  <br>
+  <%=link_to "Sign Up", new_user_url %>
+
+  <% else %>
+  <%= "Hi #{current_user.email}, you are logged in!" %>
+
+  <br>
+
+  <%=button_to "Sign Out", session_url(current_user), method: :delete %>
+
+<% end %>
 
 <%= yield %>
 

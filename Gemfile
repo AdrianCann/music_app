@@ -7,6 +7,11 @@ gem 'rails', '4.0.2'
 gem 'pg'
 
 gem 'pry-rails'
+gem 'addressable'
+
+gem 'bcrypt-ruby', require: 'bcrypt'
+#gem 'bcrypt'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -34,6 +39,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

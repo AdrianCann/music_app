@@ -1,0 +1,21 @@
+<h1>Sign Up to Hear Chill Bands Play Hot Tunes!</h1>
+
+<form action="<%= users_url %>" method='post'>
+
+<%= authenticity_token %>
+
+  <label for="user_email">Email</label>
+  <input
+    name=user[email]
+    type="text">
+  <br>
+
+  <label for="password">Password</label>
+  <input
+    name=user[password]
+    type="password">
+  <br>
+
+  <input type="submit" value="CREATE ACCOUNT">
+
+</form>
